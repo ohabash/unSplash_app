@@ -17,6 +17,8 @@ import { LionComponent } from './lion/lion.component';
 import { SearchComponent } from './search/search.component';
 import { HomeComponent } from './home/home.component';
 import { OstrichComponent } from './ostrich/ostrich.component';
+import { FishComponent } from './fish/fish.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { OstrichComponent } from './ostrich/ostrich.component';
     SearchComponent,
     HomeComponent,
     OstrichComponent,
+    FishComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

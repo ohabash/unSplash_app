@@ -9,8 +9,9 @@ import { GiraffeComponent } from './giraffe/giraffe.component';
 import { LionComponent } from './lion/lion.component';
 import { SearchComponent } from './search/search.component';
 import { HomeComponent } from './home/home.component';
+import { FishComponent } from './fish/fish.component';
 import { OstrichComponent } from './ostrich/ostrich.component';
-
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   { path: 'dogs', component: DogsComponent },
@@ -23,6 +24,8 @@ const routes: Routes = [
   { path: 'search', component:  SearchComponent},
   { path: '', component: HomeComponent },
   { path: 'ostrich', component: OstrichComponent },
+  { path: 'fish', component: FishComponent },
+  { path: 'about', component: AboutComponent },
 ];
 
 @NgModule({
