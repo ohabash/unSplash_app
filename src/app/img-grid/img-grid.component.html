@@ -1,0 +1,20 @@
+<div class="columns animal-cols is-multiline" *ngIf="results">
+
+  <!-- img item -->
+  <div class="column is-3 grid-item" *ngFor="let item of results">
+    <div class="img-container">
+      <div class="info-box">
+        <div class="copy centerer tac">
+          {{item.description}}
+          <a *ngIf="item.user?.portfolio_url" target="_blank" href="{{item.user.portfolio_url}}" class="bold_link">See
+            More from
+            {{item.user.username}}</a>
+        </div>
+      </div>
+      <img src="{{item.urls.regular}}" alt="">
+    </div>
+  </div>
+
+</div>
+
+<p *ngIf="!results">No results found!</p>

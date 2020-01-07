@@ -1,0 +1,31 @@
+nav {
+    background: #000;
+    text-align: center;
+}
+
+nav .nav-item {
+      display: inherit;
+}
+
+nav .nav-item  a{
+    padding: 1em;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.9em;
+    letter-spacing: 0.05em;
+}
+
+nav .nav-item  a:hover {
+    color: #ff9a00;
+}
+nav .nav-item  a.active {
+    background: #ff9a00;
+    color: #000
+}
+
+.content-container {
+    background: #232323;
+    min-height: 100vh;
+    color: #fff;
+}

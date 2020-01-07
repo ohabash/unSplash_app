@@ -53,6 +53,7 @@
       "trace"
     ],
     "no-empty": false,
+    "variable-name": false,
     "no-inferrable-types": [
       true,
       "ignore-params"
