@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { UnsplashService } from './unsplash.service';
 import { ImgGridComponent } from './img-grid/img-grid.component';
 import { GiraffeComponent } from './giraffe/giraffe.component';
 import { LionComponent } from './lion/lion.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -25,11 +27,14 @@ import { LionComponent } from './lion/lion.component';
     ImgGridComponent,
     GiraffeComponent,
     LionComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [UnsplashService],
   bootstrap: [AppComponent]
