@@ -12,6 +12,7 @@ import { KillerwhalesComponent } from './killerwhales/killerwhales.component';
 import { UnsplashService } from './unsplash.service';
 import { ImgGridComponent } from './img-grid/img-grid.component';
 import { HomeComponent } from './home/home.component';
+import { OstrichComponent } from './ostrich/ostrich.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HomeComponent } from './home/home.component';
     KillerwhalesComponent,
     ImgGridComponent,
     HomeComponent,
+    OstrichComponent,
   ],
   imports: [
     BrowserModule,
