@@ -15,6 +15,8 @@ import { ImgGridComponent } from './img-grid/img-grid.component';
 import { GiraffeComponent } from './giraffe/giraffe.component';
 import { LionComponent } from './lion/lion.component';
 import { SearchComponent } from './search/search.component';
+import { HomeComponent } from './home/home.component';
+import { OstrichComponent } from './ostrich/ostrich.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { SearchComponent } from './search/search.component';
     GiraffeComponent,
     LionComponent,
     SearchComponent,
+    HomeComponent,
+    OstrichComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,7 +8,8 @@ import { KillerwhalesComponent } from './killerwhales/killerwhales.component';
 import { GiraffeComponent } from './giraffe/giraffe.component';
 import { LionComponent } from './lion/lion.component';
 import { SearchComponent } from './search/search.component';
-
+import { HomeComponent } from './home/home.component';
+import { OstrichComponent } from './ostrich/ostrich.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,8 @@ const routes: Routes = [
   { path: 'giraffe', component:  GiraffeComponent},
   { path: 'lion', component:  LionComponent},
   { path: 'search', component:  SearchComponent},
+  { path: '', component: HomeComponent },
+  { path: 'ostrich', component: OstrichComponent },
 ];
 
 @NgModule({
