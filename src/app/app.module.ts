@@ -13,6 +13,8 @@ import { UnsplashService } from './unsplash.service';
 import { ImgGridComponent } from './img-grid/img-grid.component';
 import { HomeComponent } from './home/home.component';
 import { OstrichComponent } from './ostrich/ostrich.component';
+import { FishComponent } from './fish/fish.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { OstrichComponent } from './ostrich/ostrich.component';
     ImgGridComponent,
     HomeComponent,
     OstrichComponent,
+    FishComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
