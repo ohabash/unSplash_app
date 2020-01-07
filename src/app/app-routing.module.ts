@@ -5,6 +5,8 @@ import { CatsComponent } from './cats/cats.component';
 import { BirdsComponent } from './birds/birds.component';
 import { PeopleComponent } from './people/people.component';
 import { KillerwhalesComponent } from './killerwhales/killerwhales.component';
+import { HomeComponent } from './home/home.component';
+
 
 
 const routes: Routes = [
@@ -13,6 +15,7 @@ const routes: Routes = [
   { path: 'birds', component: BirdsComponent },
   { path: 'people', component: PeopleComponent },
   { path: 'killerwhales', component: KillerwhalesComponent },
+  { path: '', component: HomeComponent },
 ];
 
 @NgModule({
