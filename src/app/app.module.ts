@@ -11,6 +11,8 @@ import { PeopleComponent } from './people/people.component';
 import { KillerwhalesComponent } from './killerwhales/killerwhales.component';
 import { UnsplashService } from './unsplash.service';
 import { ImgGridComponent } from './img-grid/img-grid.component';
+import { GiraffeComponent } from './giraffe/giraffe.component';
+import { LionComponent } from './lion/lion.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { ImgGridComponent } from './img-grid/img-grid.component';
     PeopleComponent,
     KillerwhalesComponent,
     ImgGridComponent,
+    GiraffeComponent,
+    LionComponent,
   ],
   imports: [
     BrowserModule,
