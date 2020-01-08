@@ -17,7 +17,7 @@
   </div>
 </div>
 
-<div *ngIf="expanded" class="expanded-img">
+<div *ngIf="expanded" class="expanded-img" (keydown.escape)="closeExpandedView()">
   <div (click)="closeExpandedView()" class="expandedBg"></div>
   <div class="img-stuff">
     <img src="{{results[active].urls.regular}}" alt="">  <p>{{results[active].description}}</p>

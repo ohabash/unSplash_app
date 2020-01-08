@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, HostListener } from '@angular/core';
+
 import { UnsplashService } from '../unsplash.service';
 import { ThrowStmt } from '@angular/compiler';
 import { NgIf } from '@angular/common';
@@ -16,6 +17,17 @@ export class ImgGridComponent implements OnInit, OnChanges {
   active: number; // Index of currently expanded image, if any
   expanded: boolean; // Expanded image view toggle
   dlimit = 60;
+
+  @HostListener('document:keyup', ['$event'])
+  keyEvent(event: KeyboardEvent) {
+    if (event.keyCode === 27) { // Escape
+      this.closeExpandedView();
+    } else if (event.keyCode === 37) { // Left
+      this.prev();
+    } else if (event.keyCode === 39) { // Right
+      this.next();
+    }
+  }
 
   constructor(private unsplashService: UnsplashService) {
   }
@@ -46,7 +58,7 @@ export class ImgGridComponent implements OnInit, OnChanges {
     if (this.active < this.results.length) {
       this.active++;
     } else if (this.results.length !== 0) {
-      //this.active = this.results[0]; <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+      //this.active = this.results[0];
     }
   }
 
