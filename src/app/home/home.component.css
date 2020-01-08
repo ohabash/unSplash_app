@@ -1,0 +1,27 @@
+h1 {
+    margin-top: -1em;
+    text-align: center;
+    color: #ff9a00;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 5em;
+    letter-spacing: 0.05em;
+    width: 100%;
+     /* display: none; */
+     cursor: pointer;
+     -webkit-transition: all 1 ease-in-out;
+     -moz-transition: all 1 ease-in-out;
+     -o-transition: all 1 ease-in-out;
+     -ms-transition: all 1 ease-in-out;
+     transition: all 1s ease-in-out;
+}
+
+h1:hover{
+    color: #232323;
+    
+}
+.homecontainer{
+    height: 100vh;
+    
+    
+}
