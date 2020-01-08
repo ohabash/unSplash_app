@@ -12,7 +12,7 @@ import { NgIf } from '@angular/common';
 export class ImgGridComponent implements OnInit, OnChanges {
 
   @Input() query: any;
-
+  
   results: []; // Array of results images
   active: number; // Index of currently expanded image, if any
   expanded: boolean; // Expanded image view toggle

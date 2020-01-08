@@ -5,7 +5,7 @@
     <div class="img-container">
       <div class="info-box">
         <div class="copy centerer">
-          {{item.description}}
+          {{(item.description.length>dlimit)? item.description.slice(0, dlimit)+'...' :item.description}}
           <br />
           <a *ngIf="item.user?.portfolio_url" target="_blank" href="{{item.user.portfolio_url}}" class="bold_link">See
             More from
