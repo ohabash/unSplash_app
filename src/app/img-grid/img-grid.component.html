@@ -1,11 +1,12 @@
 <div class="columns animal-cols is-multiline" *ngIf="results">
 
   <!-- img item -->
-  <div class="column is-3 grid-item" *ngFor="let item of results">
+  <div class="column is-3 grid-item" *ngFor="let item of results; let i = index" (click)="active=i; expanded=true;">
     <div class="img-container">
       <div class="info-box">
-        <div class="copy centerer tac">
+        <div class="copy centerer">
           {{item.description}}
+          <br />
           <a *ngIf="item.user?.portfolio_url" target="_blank" href="{{item.user.portfolio_url}}" class="bold_link">See
             More from
             {{item.user.username}}</a>
@@ -14,7 +15,21 @@
       <img src="{{item.urls.regular}}" alt="">
     </div>
   </div>
+</div>
 
+<div *ngIf="expanded" class="expanded-img">
+  <div (click)="closeExpandedView()" class="expandedBg"></div>
+  <div class="img-stuff">
+    <img src="{{results[active].urls.regular}}" alt="">  <p>{{results[active].description}}</p>
+    <a *ngIf="results[active].user?.portfolio_url" target="_blank" href="{{results[active].user.portfolio_url}}" class="bold_link">See
+      More from
+      {{results[active].user?.username}}</a>
+  </div>
+  <div class="toolbar">
+    <button (click)="prev()">previous</button>
+    <button (click)="next()">next</button>
+    <button (click)="closeExpandedView()" class="closeViewBtn">X</button>
+  </div>
 </div>
 
 <p *ngIf="!results">No results found!</p>
