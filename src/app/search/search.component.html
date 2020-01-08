@@ -1,15 +1,39 @@
 <div class="columns Search-cols is-multiline">
-
-    <div class="field">
-        <div class="control has-icons-left has-icons-right">
-          <input class="input is-medium" type="text" placeholder="Search"(keyup.enter)="text=q"[(ngModel)]="q">
-          <span class="icon is-medium is-left">
-            <i class="fas fa-envelope"></i>
-          </span>
+    
+  <!-- toolbar -->
+  <div class="w100">
+    <div class="level">
+        <!-- search -->
+        <div class="level-item">
+          <div class="field w100">
+              <div class="control has-icons-left has-icons-right">
+                <input class="input is-medium" type="text" placeholder="Search"(keyup.enter)="text=q"[(ngModel)]="q">
+                
+                <span class="icon is-medium is-left">
+                  <i class="fas fa-envelope"></i>
+                </span>
+              </div>
+            </div>
         </div>
+        
+        <!-- filters -->
+        <a class="level-items button" [class.active]="orientation==='portrait'" (click)="orientation = 'portrait'">Portrait</a>
+        <a class="level-items button" [class.active]="orientation==='landscape'" (click)="orientation = 'landscape'">Landscape</a>
+        <a class="level-items button" [class.active]="orientation==='squarish'" (click)="orientation = 'squarish'">Square</a>
       </div>
-    <!-- <input type="text" name="search_query"(keyup.enter)="text = q" [(ngModel)]="q"> -->
-    <!-- <a class="button" (click)="text=q">Search</a> -->
-    <img-grid [query]="text"></img-grid>
+    </div>
+
+    <!-- now showing -->
+    <p *ngIf="text" class="mute small">Showing Results For: <strong>{{text}}</strong></p>
+    <hr>
+    <!-- grid -->
+    <div>
+      <!-- <img-grid *ngIf="text" [query]="text" [orientation]="orientation"></img-grid> -->
+    </div>
+
+    <!-- no results -->
+    <div>
+      <h6 *ngIf="!text">Type and press enter to get results.</h6>
+    </div>
   
   </div>

@@ -1,10 +1,62 @@
+strong {
+  color: inherit !important;
+}
+
+input, .input {
+    border-radius: 0;
+}
+
+button, .button {
+    height: 3em;
+    border-radius: 0;
+    border: none;
+    font-weight: bold;
+    color: #111;
+    background: #ccc;
+}
+
+button.active,
+.button.active {
+    background: #000;
+    color: #ff9a00;
+}
+
+.filter-btn {
+    padding: 1em;
+    background: transparent;
+    color: #4e4e4e;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.filter-btn.active {
+    color: #ff9a00;
+}
+
+.filter-btn:hover {
+    color: #fff;
+}
+
+.filter-btn.active:hover {
+  color: #ff9a00;
+}
+
 .grid-item .img-container {
     position: relative;
 }
 
 .grid-item img{
-    height: 26em;
+    /* height: 26em; */
     width: 100%;
+    object-fit: cover;
+    /* height: 100%; */
+}
+
+.yellow, yellow {
+    color: #ff9a00;
+}
+.gray, gray {
+    color: #ccc;
 }
 
 .grid-item .info-box {
@@ -34,4 +86,40 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.search-container {
+    background: #333;
+}
+
+.search-container input {
+    background: transparent;
+    font-size: 2em !important;
+    color: #fff !important;
+    border: none;
+    box-shadow: 0 0 0 !important;
+    padding-left: 0 !important;
+}
+
+.input::-moz-placeholder, .textarea::-moz-placeholder, .select select::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.1);
+}
+
+.input::-webkit-input-placeholder, .textarea::-webkit-input-placeholder, .select select::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.1);
+}
+
+.input:-moz-placeholder, .textarea:-moz-placeholder, .select select:-moz-placeholder {
+  color: rgba(255, 255, 255, 0.1);
+}
+
+.input:-ms-input-placeholder, .textarea:-ms-input-placeholder, .select select:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.1);
+}
+
+svg.this { width: 1em; }
+svg.this path { fill: #fff; }
+
+.level-item strong {
+    padding-left: 0.25em;
 }

@@ -11,15 +11,8 @@ export class UnsplashService {
   constructor(private http: HttpClient) {
   }
 
-  search_images(qry: string) {
-    const q = {
-      client_id: 'a454fbcbca7b2231415a8de80c764c3c61198d3be3871e4e9cb1c2e9f6a5c422',
-      query: qry,
-      per_page: '20',
-      page: '1',
-      orientation: 'portrait'
-    };
-    return this.http.get<any>(this.unsplash_api + '/search/photos', {params: q});
+  search_images(options) {
+    return this.http.get<any>(this.unsplash_api + '/search/photos', {params: options});
   }
 
   //ramin: trying to get random image to put as background

@@ -1,35 +1,85 @@
-<div class="columns animal-cols is-multiline" *ngIf="results">
+<div id="img-grid" class="pr">
 
-  <!-- img item -->
-  <div class="column is-3 grid-item" *ngFor="let item of results; let i = index" (click)="active=i; expanded=true;">
-    <div class="img-container">
-      <div class="info-box">
-        <div class="copy centerer">
-          {{(item.description.length>dlimit)? item.description.slice(0, dlimit)+'...' :item.description}}
-          <br />
-          <a *ngIf="item.user?.portfolio_url" target="_blank" href="{{item.user.portfolio_url}}" class="bold_link">See
-            More from
-            {{item.user.username}}</a>
-        </div>
-      </div>
-      <img src="{{item.urls.regular}}" alt="">
+
+
+  <div class="level">
+    <div class="level-left">
+      <p *ngIf="query" class="small gray">Showing Results For: <span class="yellow bold">{{query}}</span></p>
+    </div>
+    <div class="level-right">
+      <a class="level-items filter-btn" [class.active]="orientation==='portrait'"
+        (click)="setOrientation('portrait')">Portrait</a>
+      <a class="level-items filter-btn" [class.active]="orientation==='landscape'"
+        (click)="setOrientation('landscape')">Landscape</a>
+      <a class="level-items filter-btn" [class.active]="orientation==='squarish'"
+        (click)="setOrientation('squarish')">Square</a>
     </div>
   </div>
-</div>
+  <div class="columns animal-cols is-multiline" *ngIf="results">
 
-<div *ngIf="expanded" class="expanded-img" (keydown.escape)="closeExpandedView()">
-  <div (click)="closeExpandedView()" class="expandedBg"></div>
-  <div class="img-stuff">
-    <img src="{{results[active].urls.regular}}" alt="">  <p>{{results[active].description}}</p>
-    <a *ngIf="results[active].user?.portfolio_url" target="_blank" href="{{results[active].user.portfolio_url}}" class="bold_link">See
-      More from
-      {{results[active].user?.username}}</a>
+    <!-- img item -->
+    <div class="column is-3 grid-item" *ngFor="let item of results; let i = index" (click)="active=i; expanded=true;">
+      <div class="img-container">
+        <div class="info-box">
+          <div class="copy centerer" *ngIf="item.description">
+            {{(item.description.length>dlimit)? item.description.slice(0, dlimit)+'...' :item.description}}
+            <br />
+            <a *ngIf="item.user?.portfolio_url" target="_blank" href="{{item.user.portfolio_url}}" class="bold_link">See
+              More from
+              {{item.user.username}}</a>
+          </div>
+        </div>
+        <img src="{{item.urls.regular}}" alt="">
+      </div>
+    </div>
   </div>
-  <div class="toolbar">
-    <button (click)="prev()">previous</button>
-    <button (click)="next()">next</button>
-    <button (click)="closeExpandedView()" class="closeViewBtn">X</button>
-  </div>
-</div>
 
-<p *ngIf="!results">No results found!</p>
+  <div *ngIf="expanded" class="expanded-img">
+    <div (click)="closeExpandedView()" class="expandedBg"></div>
+    <div class="img-stuff">
+      <img src="{{results[active].urls.regular}}" alt="">  <p>{{results[active].description}}</p>
+      <a *ngIf="results[active].user?.portfolio_url" target="_blank" href="{{results[active].user.portfolio_url}}" class="bold_link">See
+        More from
+        {{results[active].user?.username}}</a>
+    </div>
+    <div class="toolbar">
+      <button (click)="prev()">previous</button>
+      <button (click)="next()">next</button>
+      <button (click)="closeExpandedView()" class="closeViewBtn">X</button>
+      
+      <!-- Download -->
+      <div class="select">
+        <select (change)="download($event.target.value)">
+          <option disabled>Download</option>
+          <option *ngFor="let size of results[active].urls|keyvalue" value="{{size.value}}">{{size.key}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <p *ngIf="!results?.length">No results found!</p>
+
+  <div id="pagination" class="stick-bottom" *ngIf="data">
+    <div class="level">
+      <div class="level-left">
+      <p class="mute level-item">Total: <strong> {{data.total}}</strong></p>
+      <p class="mute level-item">Page: <strong> {{page}}</strong></p>
+      <p class="mute level-item">Total Pages: <strong> {{data.total_pages}}</strong></p>
+      </div>
+      <div class="level-right">
+        <div class="level-item">
+          <div class="filter-btn" [class.disabled]="page === 1" (click)="prevPage()">Prev</div>
+          <div class="filter-btn" (click)="nextPage()">Next</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="p2em"></div>
+<div class="p2em"></div>
+<div class="p2em"></div>
+<div class="p2em"></div>
+<div class="p2em"></div>
+<div class="p2em"></div>
+<div class="p2em"></div>

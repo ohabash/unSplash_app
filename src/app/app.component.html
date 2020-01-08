@@ -1,19 +1,37 @@
 <nav class="columns m0 is-centered is-gapless">
-  <div class="nav-item"><a routerLinkActive="active" routerLink="dogs" class="c">Dogs</a></div>
-  <div class="nav-item"><a routerLinkActive="active" routerLink="cats" class="c">Cats</a></div>
-  <div class="nav-item"><a routerLinkActive="active" routerLink="birds" class="c">Birds</a></div>
-  <div class="nav-item"><a routerLinkActive="active" routerLink="people" class="c">People</a></div>
-  <div class="nav-item"><a routerLinkActive="active" routerLink="killerwhales" class="c">Killer Whales</a></div>
-  <div class="nav-item"><a routerLinkActive="active" routerLink="giraffe" class="c">Giraffes</a></div>
-  <div class="nav-item"><a routerLinkActive="active" routerLink="lion" class="c">Lion</a></div>
-  <div class="nav-item"><a routerLinkActive="active" routerLink="search" class="c">Search</a></div>
   
-
-  <div class="nav-item"><a routerLinkActive="active" routerLink="ostrich" class="c">Ostrich</a></div>
+  <div class="nav-item"><a routerLink="" class="c"><svg class="this" viewBox="0 0 576 512">
+        <path
+          d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z" />
+        </svg></a>
+  </div>
+  <div class="nav-item"><a routerLinkActive="active" routerLink="search/dogs" class="c">Dogs</a></div>
+  <div class="nav-item"><a routerLinkActive="active" routerLink="search/cats" class="c">Cats</a></div>
+  <div class="nav-item"><a routerLinkActive="active" routerLink="search/birds" class="c">Birds</a></div>
+  <div class="nav-item"><a routerLinkActive="active" routerLink="search/lion" class="c">Lion</a></div>
+  <div class="nav-item"><a routerLinkActive="active" routerLink="search/developer" class="c">developer</a></div>
+  <!-- <div class="nav-item"><a routerLinkActive="active" routerLink="search/search" class="c">Search</a></div> -->
+  <div class="nav-item"><a routerLinkActive="active" routerLink="search/ostrich" class="c">Ostrich</a></div>
 </nav>
 
+
 <div class="content-container">
-  <div class="container p2em">
+  <!-- search -->
+  <div class="search-container">
+    <div class="field w100 container">
+      <div class="control has-icons-left has-icons-right">
+        <input class="input is-medium" type="text" placeholder="Search" (keyup.enter)="search()" [(ngModel)]="q">
+  
+        <span class="icon is-medium is-left">
+          <i class="fas fa-envelope"></i>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- routes -->
+  <div class="p1em"></div>
+  <div class="container">
     <router-outlet></router-outlet>
   </div>
 </div>

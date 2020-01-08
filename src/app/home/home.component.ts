@@ -14,10 +14,10 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.randomImg();
+    // this.randomImg();
   }
-  
-  //ramin: trying to get random image to put as background
+
+  // ramin: trying to get random image to put as background
   // randomImg(){
   //   this.unsplashService.get_random().toPromise().then(data => {
   //     console.log('===> ' +  data.result);
