@@ -1,21 +1,29 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { UnsplashService } from '../unsplash.service';
 import { ThrowStmt } from '@angular/compiler';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'img-grid',
   templateUrl: './img-grid.component.html',
   styleUrls: ['./img-grid.component.css']
 })
-export class ImgGridComponent implements OnInit {
+export class ImgGridComponent implements OnInit, OnChanges {
 
   @Input() query: any;
 
   results: []; // Array of results images
   active: number; // Index of currently expanded image, if any
   expanded: boolean; // Expanded image view toggle
+  dlimit = 60;
 
   constructor(private unsplashService: UnsplashService) {
+  }
+
+  ngOnChanges(changes) {
+    console.log(changes)
+    this.query = changes.query.currentValue;
+    this.getImages();
   }
 
   ngOnInit() {
@@ -23,10 +31,15 @@ export class ImgGridComponent implements OnInit {
   }
 
   getImages() {
-    this.unsplashService.search_images(this.query).toPromise().then(data => {
-      console.log('===> ' + this.query, data.results);
-      this.results = data.results;
-    });
+    //how to check if the query has any value here
+    /*if(this.query)
+    {*/
+      console.log('searching for ', this.query)
+      this.unsplashService.search_images(this.query).toPromise().then(data => {
+        console.log('===> ' + this.query, data.results);
+        this.results = data.results;
+      });
+    //}
   }
 
   next() {
